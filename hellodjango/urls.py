@@ -1,7 +1,5 @@
 from django.conf.urls import patterns, include, url
 
-party_resource = PartyResource()
-
 urlpatterns = patterns('',
 
 	url(r'^$', 'web.views.index'),
