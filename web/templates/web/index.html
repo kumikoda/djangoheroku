@@ -1,1 +1,119 @@
-hello world!
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="static/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+	  .modal {
+		margin: ;-250px 0 0 -280px
+	  }
+	
+    </style>
+    <link href="static/vendor/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div id='hostapp' class="container-fluid">
+	
+      <div class="row-fluid">
+	    <div class='span2'> </div>
+        <div class="span2">
+          <form id='new-party' class='well'>
+			<h1 id='mode'>New</h1>
+			<input id='new-name' type="text" class="span10" placeholder="Name">
+			<input id='new-size' type="text" class="span10" placeholder="Party Size">
+			<hr>
+			<input id='new-number' type="text" class="span10" placeholder="Number">
+			<button id='add' class="btn-large btn-primary"><i class="icon-plus icon-white"></i> Add</button>
+			
+		  </form>
+        </div><!--/left span-->
+		
+        <div class="span6">
+			<table class='table table-bordered table-striped'>
+				<thead>
+					<tr>
+					<th>id</th>
+					<th>Name</th>
+					<th>Party Size</th>
+					<th>Status</th>
+					</tr>
+				</thead>
+				<tbody id='party-list'>
+				</tbody>
+			</table>
+			
+			<div class="modal hide fade" id="myModal">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal">×</button>
+			    <h3>Party <span id='id'></span></h3> <label>Status: <span id='status'></span></label>
+			  </div>
+			  <div class="modal-body">
+				
+				<div class='row-fluid'>
+					<div id='leftside' class='span6 well'>
+				    	<h2>Details</h2>
+						<input id='name' type="text" class="span12" placeholder="Name"></input>
+						<input id='size' type="text" class="span12" placeholder="Party Size"></input>
+						<hr>
+						<input id='number' type="text" class="span12" placeholder="Number"></input>
+					</div>
+					
+					<div id='rightSide' class='span6 well'> 
+						<h2>Actions</h2>
+						<a href="#"id='sendSMS'class="action btn btn-large btn-inverse " data-loading-text="Sending..." data-complete-text="Send Again"> <i class="icon-comment icon-white"></i> Text</a>
+						
+						<button id='seat'class="action btn btn-large btn-success" data-toggle="button"> <i class="icon-ok icon-white" ></i> Seat</button>
+						
+					</div>
+				</div>
+				
+			  </div>
+			  <div class="modal-footer">
+			    <a href="#" class="btn" data-dismiss="modal">Close</a>
+			    <a href="#" class="btn btn-primary">Save changes</a>
+			  </div>
+			</div>
+        </div><!--/center span-->
+
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.fluid-container-->
+	
+ 
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+	<script src='static/vendor/bootstrap/js/bootstrap-modal.js'></script>
+	<script src='static/vendor/bootstrap/js/bootstrap-button.js'></script>
+	<script src='static/vendor/bootstrap/js/bootstrap-transition.js'></script>
+	
+	
+	<script src='static/vendor/backbone/underscore-min.js'></script>
+	<script src='static/vendor/backbone/backbone-min.js'></script>
+	
+	<script src='static/js/csrf.js'></script>
+	<script src='static/js/host.js'></script>
+
+  </body>
+</html>
