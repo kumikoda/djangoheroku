@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from web.models import Party
-from twilio.rest import TwilioRestCliente
+from twilio.rest import TwilioRestClient
 
 
 def serialize(party):
