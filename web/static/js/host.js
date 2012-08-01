@@ -1,4 +1,4 @@
-var root_url = "http://pure-eyrie-5363.herokuapp.com/"
+var root_url = "http://immense-taiga-8599.herokuapp.com/"
 
 function isNumeric(n){
 	return !isNaN(parseFloat(n)) && isFinite(n)
