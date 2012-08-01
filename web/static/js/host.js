@@ -168,6 +168,9 @@ var App = new (Backbone.View.extend({
 		if (newParty.create()){
 			this.partyList.add(newParty);
 		}
+		$('#new-size').val("");
+		$('#new-name').val("");
+		$('#new-number').val("");
 		
 	},
 	
