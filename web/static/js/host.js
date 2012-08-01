@@ -1,3 +1,5 @@
+var root_url = "http://pure-eyrie-5363.herokuapp.com/"
+
 function isNumeric(n){
 	return !isNaN(parseFloat(n)) && isFinite(n)
 }
@@ -22,7 +24,7 @@ var Party = Backbone.Model.extend({
 		else{ 
 			$.ajax({
 		  		type:"POST",
-		  		url: "http://127.0.0.1:8000/party/",
+		  		url: root_url+"party/",
 		  		dataType: "json",
 		  		data:this.attributes,
 				async: false,
@@ -39,7 +41,7 @@ var Party = Backbone.Model.extend({
 		var thisModel = this;
 		$.ajax({
 	  		type:"POST",
-	  		url: "http://127.0.0.1:8000/party/"+thisModel.get('id'),
+	  		url: root_url+"party/"+thisModel.get('id'),
 	  		dataType: "json",
 	  		data:this.attributes,
 			success: function(data) {
@@ -51,7 +53,7 @@ var Party = Backbone.Model.extend({
 	
 });
 var PartyList = Backbone.Collection.extend({
-	url:"http://127.0.0.1:8000/parties/"
+	url:root_url+"parties/"
 });
 
 var ModalView = Backbone.View.extend({
@@ -174,7 +176,7 @@ var App = new (Backbone.View.extend({
 		id=elementInFocus.get('id');
 		$.ajax({
 			type:"POST",
-			url: "http://127.0.0.1:8000/sms/",
+			url: root_url+"/sms/",
 			data:{'id':id},
 			success: function(response) {
 				$("#sendSMS").button('complete');
@@ -190,7 +192,7 @@ var App = new (Backbone.View.extend({
 		id=elementInFocus.get('id');
 		$.ajax({
 			type:"POST",
-			url: "http://127.0.0.1:8000/seat/",
+			url: root_url+"/seat/",
 			data:{'id':id},
 			success: function(response) {
 				elementInFocus.set("status", "s");
