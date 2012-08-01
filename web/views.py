@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from web.models import Party
 from twilio.rest import TwilioRestClient
+from django.views.decorators.csrf import csrf_exempt  
 
 
 def serialize(party):
@@ -16,7 +17,8 @@ def serialize(party):
 
 def index (request):
 	return render_to_response("web/index.html")
-	
+
+@csrf_exempt 	
 def detail (request, party_id=None):
 	if request.method == 'GET':
 		party = Party.objects.get(pk=party_id)
@@ -35,6 +37,7 @@ def parties (request):
 		json = "["+ ','.join(map ( serialize, party_list)) + "]"
 		return HttpResponse(json)
 		
+@csrf_exempt 		
 def sms(request):
 	account_sid = "ACbd4d8320445ee24013362d44cbb6b4b0"
 	auth_token = "2c829ea191dbd72e5341ba2a2c921655"
@@ -53,6 +56,7 @@ def sms(request):
 	if request.method == "GET":
 		return HttpResponse("{sid:"+account_sid+", auth_token:"+auth_token+"}")
 		
+@csrf_exempt 		
 def seat(request):
 	if request.method == "POST":
 		party = Party.objects.get(pk=request.POST['id'])
